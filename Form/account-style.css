@@ -1,0 +1,144 @@
+body {
+    background-image: url("Images/Softy3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.headline-container{
+    background-color:aqua;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container:hover .form-wrapper{
+    opacity:1;
+    visibility:visible;
+}
+.form-wrapper{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+.form-wrapper {
+    width:400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-image: url("Images/Softy2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.form-container.login {
+    display: block;
+}
+.form-container.registration {
+    display:none;
+}
+.form-container.hidden {
+    display: none;
+}
+.form-container.visible {
+    display:block;
+}
+.form-container h2 {
+    text-align: center;
+    font-family:cursive;
+    color:white;
+}
+.input-container{
+    position:relative;
+    margin-bottom: 20px;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    width:100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+input[type="text"]:focus::placeholder, input[type="email"]:focus::placeholder, input[type="password"]:focus::placeholder{
+    color: transparent;
+}
+label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: transparent;
+    pointer-events: none;
+    transition: top 0.1s ease, font-size 0.1s ease, color 0.1s ease;
+}
+input:focus + label {
+    top: 5px;
+    font-size: 10px;
+    color: black;
+}
+input:focus:after + label {
+    top: 5px;
+    font-size: 10px;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color:dodgerblue;
+    color: #fff;
+    border:none;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px rgba(10, 233, 58, 0.815);
+}
+input[type="submit"]:hover{
+    background-color:darkturquoise;
+}
+input[type="submit"]:active{
+    transform: translateY(1px);
+    background-color:darkblue;
+}
+.custom-button1 {
+    margin: 10px 20%;
+    padding:5px;
+    background-color:darkblue;
+    color:white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.custom-button1:hover {
+    background-color:goldenrod;
+}
+.custom-button1:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.5);
+}
+.custom-button1:active {
+    transform: translateY(1px);
+    background-color:palevioletred;
+}
+.custom-button2 {
+    margin: 10px 25%;
+    padding:5px;
+    background-color:darkblue;
+    color:white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.custom-button2:hover {
+    background-color:goldenrod;
+}
+.custom-button2:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.5);
+}
+.custom-button2:active {
+    transform: translateY(1px);
+    background-color:palevioletred;
+}

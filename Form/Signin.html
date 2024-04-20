@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="account-style.css">
+        <title>SoftyBevy</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-container login visible">
+                    <h2>Login</h2>
+                    <form action="login.php" method="post">
+                        <div class="input-container">
+                            <input type="email" name="email" id="email" required oninput="togglePlaceholder('email')" autocomplete="off" placeholder="Email">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="password" name="password" id="password" required oninput="togglePlaceholder('password')" placeholder="Password">
+                            <label for="password">Password</label>
+                        </div>
+                        <input type="submit" value="Login">
+                    </form>
+                    <button class="custom-button1" onclick="toggleForms()">Don't have an account? Register here!</button>
+                </div>
+                <div class="form-container registration hidden">
+                    <h2>Register</h2>
+                    <form action="register.php" method="post">
+                        <div class="input-container">
+                            <input type="text" name="firstname" id="firstname" oninput="togglePlaceholder('firstname')" autocomplete="off" required placeholder="First Name">
+                            <label for="firstname">First Name</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="lastname" id="lastname" oninput="togglePlaceholder('lastname')" autocomplete="off"  required placeholder="Last Name">
+                            <label for="lastname">Last Name</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="email" name="email" id="email-register" required oninput="togglePlaceholder('email')" autocomplete="off" placeholder="Email">
+                            <label for="email-register">Email</label>
+                        </div>
+                        <div class="input-container">
+                            <input type="password" name="password" id="password-register" oninput="togglePlaceholder('password')" required placeholder="Password">
+                            <label for="password-register">Password</label>
+                        </div>
+                        <input type="submit" value="Register">
+                    </form>
+                    <button class="custom-button2" onclick="toggleForms()">Have an account? Login here!</button>
+                </div>
+            </div>
+        </div>
+        <script src="account-script.js"></script>
+    </body>
+</html>

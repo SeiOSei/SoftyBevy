@@ -1,0 +1,10 @@
+SQL Table - Form
+--------------------------------------------
+CREATE TABLE user (
+	ID int AUTO_INCREMENT PRIMARY KEY,
+	firstname varchar(50),
+	lastname varchar(50),
+	email varchar(100),
+	password varchar(50)
+)
+--------------------------------------------
