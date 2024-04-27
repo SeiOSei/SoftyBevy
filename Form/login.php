@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -18,11 +20,22 @@ $sql = "SELECT * FROM user WHERE email='$email' AND password='$password'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "User exists.";
-    //header('location: FILE NAME FOR SHOPPING.HTML');
-}else {
+    // User exists
+    $user = $result->fetch_assoc();
+    if ($user['is_admin'] == 1) {
+        echo "Admin login successful.";
+        // Redirect to admin dashboard
+        header("Location: Dashboard.php");
+    } else {
+        //Customer login successful
+        // Redirect to customer dashboard
+        header("Location: Dashboard.php");
+        exit();
+    }
+} else {
     echo "Invalid email or password.";
 }
+
 
 $conn->close();
 ?>

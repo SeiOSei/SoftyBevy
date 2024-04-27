@@ -4,9 +4,27 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="account-style.css">
-        <title>SoftyBevy</title>
+        <link rel="stylesheet" type="text/css" href="dashboard-style.css">
+        <title>SoftyBevy Login-Register</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
+        <div class="headercontainer">
+            <header class="Dashheader">
+                <span class="headerspan"><a class="a1" href="Dashboard.html">SoftyBevy</a></span>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="Dashboard.php" class="nav-link" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Browse.php" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Signin.php" class="nav-link active">Log-in/Sign-up</a>
+                    </li>
+                </ul>
+            </header>
+        </div>
         <div class="container">
             <div class="form-wrapper">
                 <div class="form-container login visible">
@@ -43,6 +61,7 @@
                             <input type="password" name="password" id="password-register" oninput="togglePlaceholder('password')" required placeholder="Password">
                             <label for="password-register">Password</label>
                         </div>
+                        <div id="error-message" class="response-message"></div>
                         <input type="submit" value="Register">
                     </form>
                     <button class="custom-button2" onclick="toggleForms()">Have an account? Login here!</button>
@@ -50,5 +69,6 @@
             </div>
         </div>
         <script src="account-script.js"></script>
+        <script src="dashboard-script.js"></script>
     </body>
 </html>

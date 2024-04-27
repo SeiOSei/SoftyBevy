@@ -1,3 +1,30 @@
+$(document).ready(function() {
+    $('#registration-form').submit(function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        var form = $(this);
+        var url = 'register.php'; // Specify the URL of your PHP script
+        var formData = form.serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                if (response.status == 'success') {
+                    $('.response-message').text(response.message).css('color', 'green');
+                    form[0].reset();
+                } else {
+                    $('#error-message').text(response.message).css('color', 'red');
+                }
+            },
+            error: function() {
+                $('#error-message').text('Error occurred while processing the request.').css('color', 'red');
+            }
+        });
+    });
+});
+
 function toggleForms() {
     var loginForm = document.querySelector('.form-container.login');
     var registrationForm = document.querySelector('.form-container.registration');
