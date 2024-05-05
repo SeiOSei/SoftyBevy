@@ -25,11 +25,11 @@ if ($result->num_rows > 0) {
     if ($user['is_admin'] == 1) {
         echo "Admin login successful.";
         // Redirect to admin dashboard
-        header("Location: Dashboard.php");
+        header("Location: Dashboard-Loggedin.php");
     } else {
         //Customer login successful
         // Redirect to customer dashboard
-        header("Location: Dashboard.php");
+        header("Location: Dashboard-Loggedin-customer.php");
         exit();
     }
 } else {

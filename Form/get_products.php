@@ -1,16 +1,13 @@
 <?php
-// Connect to your database (replace with your actual database credentials)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "softdrinks_db";
+// Include database connection
+include 'config.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Fetch products from the database
+$select = mysqli_query($conn, "SELECT productID, productName, Price, image FROM products");
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if (mysqli_num_rows($select) > 0) {
+    $products = mysqli_fetch_all($select, MYSQLI_ASSOC);
+} else {
+    $products = array(); // Empty array if no products found
 }
-
-
 ?>

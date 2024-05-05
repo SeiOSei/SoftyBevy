@@ -46,13 +46,13 @@ if(isset($_GET['delete'])){
             <span class="headerspan"><a class="a1" href="Dashboard.html">SoftyBevy</a></span>
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a href="Dashboard.php" class="nav-link" aria-current="page">Home</a>
+                    <a href="Dashboard-Loggedin.php" class="nav-link" aria-current="page">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="Browse.php" class="nav-link active">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Signin.php" class="nav-link">Log-in/Sign-up</a>
+                    <a href="Signin.php" class="nav-link">Signout</a>
                 </li>
             </ul>
         </header>
@@ -66,7 +66,7 @@ if(isset($message)){
 }
 
 ?>
-    <div class="browse-container">
+    <div class="browse-container" style="padding:80px">
         <h2>Product List</h2>
         <button class="add-product-button" onclick="toggleADDForm()">Add New Product</button>
         <div class="admin-product-form-container hidden">

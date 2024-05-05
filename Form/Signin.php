@@ -17,7 +17,7 @@
                         <a href="Dashboard.php" class="nav-link" aria-current="page">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="Browse.php" class="nav-link">Products</a>
+                        <a href="Signin.php" class="nav-link">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a href="Signin.php" class="nav-link active">Log-in/Sign-up</a>
@@ -25,7 +25,7 @@
                 </ul>
             </header>
         </div>
-        <div class="container">
+        <div class="container" style="padding:80px">
             <div class="form-wrapper">
                 <div class="form-container login visible">
                     <h2>Login</h2>
