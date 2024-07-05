@@ -12,7 +12,7 @@
     <body>
         <div class="headercontainer">
             <header class="Dashheader">
-                <span class="headerspan"><a class="a1" href="Dashboard.html">SoftyBevy</a></span>
+                <span class="headerspan"><a class="a1" href="Dashboard.php">SoftyBevy</a></span>
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a href="Dashboard.php" class="nav-link" aria-current="page">Home</a>
