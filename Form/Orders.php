@@ -141,7 +141,7 @@ function confirmCancelOrder(orderId) {
                         echo '<td>'.$payment_method.'</td>';
                         echo '<td><button class="btn" onclick="toggleOrderDetails('.$order_id.')">Show Order</button>';
                         echo '<br>';
-                        echo '<button class="btn" onclick="confirmCancelOrder('.$order_id.')">Cancel Order</button>';
+                        echo '<button class="btn" onclick="confirmCancelOrder('.$order_id.')">Completed</button>';
                         echo '</td>';
                         echo '</tr>';
 
