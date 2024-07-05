@@ -52,6 +52,9 @@ if(isset($_GET['delete'])){
                     <a href="Browse.php" class="nav-link active">Products</a>
                 </li>
                 <li class="nav-item">
+                    <a href="Orders.php" class="nav-link">Orders</a>
+                </li>
+                <li class="nav-item">
                     <a href="Signin.php" class="nav-link">Signout</a>
                 </li>
             </ul>

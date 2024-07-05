@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="account-style.css">
         <link rel="stylesheet" type="text/css" href="dashboard-style.css">
+        <link rel="stylesheet" type="text/css" href="browse-admin-style.css">
         <title>SoftyBevy Login-Register</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
@@ -15,9 +16,6 @@
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a href="Dashboard.php" class="nav-link" aria-current="page">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="Signin.php" class="nav-link">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a href="Signin.php" class="nav-link active">Log-in/Sign-up</a>

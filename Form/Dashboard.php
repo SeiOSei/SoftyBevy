@@ -17,6 +17,7 @@ if (mysqli_num_rows($select) > 0) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="dashboard-style.css">
+<link rel="stylesheet" type="text/css" href="browse-admin-style.css">
 <title>SoftyBevy Dashboard</title>
 </head>
 <body>
@@ -26,9 +27,6 @@ if (mysqli_num_rows($select) > 0) {
             <ul class="nav nav-pills">
                 <li class="nav-item">
                     <a href="Dashboard.php" class="nav-link active" aria-current="page">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="Signin.php" class="nav-link">Cart</a>
                 </li>
                 <li class="nav-item">
                     <a href="Signin.php" class="nav-link">Log-in/Sign-up</a>

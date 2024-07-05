@@ -17,6 +17,7 @@ if (mysqli_num_rows($select) > 0) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="dashboard-style.css">
+<link rel="stylesheet" type="text/css" href="browse-admin-style.css">
 <title>SoftyBevy Dashboard</title>
 </head>
 <body>
@@ -37,7 +38,7 @@ if (mysqli_num_rows($select) > 0) {
         </header>
     </div>
     <div class="product-container" style="padding:80px">
-        <h2>Featured Products</h2>
+        <h2 style="color:aquamarine; font-size: 20px;">Featured Products</h2>
         <div class="product-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; padding-top: 35px;">
             <?php if(isset($products) && !empty($products)) {
                 foreach ($products as $product) {

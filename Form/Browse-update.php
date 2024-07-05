@@ -52,6 +52,9 @@ if(isset($_POST['update_product'])){
                 <li class="nav-item">
                     <a href="Browse.php" class="nav-link active">Products</a>
                 </li>
+                <li>
+                  <a href="Orders.php"class="nav-link">Orders</a>
+                </li>
                 <li class="nav-item">
                     <a href="Signin.php" class="nav-link">Signout</a>
                 </li>

@@ -35,6 +35,21 @@ html{
 .btn:hover{
     background-color: black;
  }
+.btnn{
+   display: block;
+   width: 100%;
+   cursor: pointer;
+   border-radius: .5rem;
+   margin-top: 1rem;
+   font-size: 1.7rem;
+   padding:1rem 3rem;
+   background-color: green;
+   color:white;
+   text-align: center;
+}
+.btnn:hover{
+   background-color: black;
+}
  .message{
     display: block;
     background: transparent;
@@ -60,6 +75,16 @@ html{
    font-size: 50px;
    text-align: center;
    text-shadow: 1px 1px cornflowerblue;
+}
+.browse-container div.total-price-container p {
+   color: cornflowerblue;
+   font-size: 50px;
+   text-align: center;
+   text-shadow: 1px 1px cornflowerblue;
+}
+
+.browse-container div.total-price-container p .price-amount {
+   color: white;
 }
 .add-product-button{
    margin-left: 42.5%;
