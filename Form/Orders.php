@@ -2,6 +2,27 @@
 session_start();
 include 'get_products.php'; // Include the file that contains database connection
 
+// Check if an order ID is set for deletion and is numeric
+if (isset($_GET['order_id']) && is_numeric($_GET['order_id'])) {
+    $order_id = $_GET['order_id'];
+
+    // Perform deletion from the child table (checkout_items) first
+    $delete_items_query = "DELETE FROM checkout_items WHERE checkout_id = $order_id";
+    if (mysqli_query($conn, $delete_items_query)) {
+        // Now delete from the parent table (checkout)
+        $delete_query = "DELETE FROM checkout WHERE checkout_id = $order_id";
+        if (mysqli_query($conn, $delete_query)) {
+            echo "Order successfully canceled.";
+            header("Location: Orders.php?message=Order+successfully+canceled");
+            exit();
+        } else {
+            echo "Error canceling order: " . mysqli_error($conn);
+        }
+    } else {
+        echo "Error deleting order items: " . mysqli_error($conn);
+    }
+}
+
 // Fetch orders from the database
 $select_orders = mysqli_query($conn, "SELECT * FROM checkout");
 
@@ -21,38 +42,38 @@ if (mysqli_num_rows($select_orders) > 0) {
 <title>SoftyBevy Orders</title>
 <style>
     .order-details-container {
-    display: none; /* Initially hide order details */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: white;
-    z-index: 1;
-}
+        display: none; /* Initially hide order details */
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: white;
+        z-index: 1;
+    }
 
-.order-details {
-    text-align: center; /* Center the content */
-}
+    .order-details {
+        text-align: center; /* Center the content */
+    }
 
-.order-actions {
-    text-align: center;
-}
+    .order-actions {
+        text-align: center;
+    }
 
-.btn {
-    margin-bottom: 5px;
-}
+    .btn {
+        margin-bottom: 5px;
+    }
 
-.product-table {
-    width: 100%; /* Make the product table take full width */
-    border-collapse: collapse;
-}
+    .product-table {
+        width: 100%; /* Make the product table take full width */
+        border-collapse: collapse;
+    }
 
-.product-table th, .product-table td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center; /* Center the content */
-}
+    .product-table th, .product-table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center; /* Center the content */
+    }
 </style>
 <script>
 function toggleOrderDetails(orderId) {
@@ -63,6 +84,7 @@ function toggleOrderDetails(orderId) {
         orderDetails.style.display = 'none';
     }
 }
+
 function confirmCancelOrder(orderId) {
     if (confirm('Do you want to cancel this order?')) {
         window.location.href = 'Orders.php?order_id=' + orderId;
@@ -105,29 +127,8 @@ function confirmCancelOrder(orderId) {
             </thead>
             <tbody>
                 <?php
-                $orders_query = "SELECT * FROM checkout ORDER BY checkout_id DESC"; // Modify query as per your database structure
-                $orders_result = mysqli_query($conn, $orders_query);
-                if (isset($_GET['order_id']) && is_numeric($_GET['order_id'])) {
-                    $order_id = $_GET['order_id'];
-                
-                    // Perform deletion from the database
-                    $delete_query = "DELETE FROM checkout WHERE checkout_id = $order_id";
-                    $delete_items_query = "DELETE FROM checkout_items WHERE checkout_id = $order_id";
-                
-                    // Execute the queries
-                    if (mysqli_query($conn, $delete_query) && mysqli_query($conn, $delete_items_query)) {
-                        echo "Order successfully canceled.";
-                        header("Location: Orders.php?message=Order+successfully+canceled");
-                        exit();
-                    } else {
-                        echo "Error canceling order: " . mysqli_error($conn);
-                    }
-                } else {
-                    echo "Invalid order ID provided.";
-                }
-
-                if (mysqli_num_rows($orders_result) > 0) {
-                    while ($row = mysqli_fetch_assoc($orders_result)) {
+                if (isset($orders) && !empty($orders)) {
+                    foreach ($orders as $row) {
                         $order_id = $row['checkout_id'];
                         $customer_name = $row['customer_name'];
                         $total_price = $row['total_price'];
@@ -183,7 +184,6 @@ function confirmCancelOrder(orderId) {
 
                         echo '</div>'; // End of order details div
                         echo '</td></tr>';
-
                     }
                 } else {
                     echo '<tr><td colspan="8">No orders found.</td></tr>';
